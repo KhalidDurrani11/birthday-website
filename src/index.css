@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-cursive: "Dancing Script", cursive;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  :root {
+    --background: #fff9fb; /* Very soft pink-white */
+    --foreground: #5a4b4b; /* Soft brown-gray */
+    --card: #ffffff;
+    --card-foreground: #5a4b4b;
+    --popover: #ffffff;
+    --popover-foreground: #5a4b4b;
+    --primary: #f8c8dc; /* Pastel Pink */
+    --primary-foreground: #5a4b4b;
+    --secondary: #e6e6fa; /* Lavender */
+    --secondary-foreground: #5a4b4b;
+    --muted: #fdf2f8;
+    --muted-foreground: #a08c8c;
+    --accent: #fce4ec; /* Lightest Pink */
+    --accent-foreground: #5a4b4b;
+    --border: #f1e1e1;
+    --input: #f1e1e1;
+    --ring: #f8c8dc;
+    --radius: 1.25rem;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+  
+  .font-cursive {
+    font-family: var(--font-cursive);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(248, 200, 220, 0.6);
+  }
+
+  .bg-magical-gradient {
+    background: radial-gradient(circle at 20% 20%, #fce4ec 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, #e0f2f1 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, #f3e5f5 0%, transparent 60%);
+  }
+}
